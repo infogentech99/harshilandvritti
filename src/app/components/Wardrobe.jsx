@@ -5,12 +5,10 @@ import { useEffect, useRef, useState } from "react";
 const cover = "/assets/door.png";
 
 const images = [
-  "/assets/haldi.webp",
-  "/assets/phool.webp",
-  "/assets/bhaat.webp",
-  "/assets/sangeet.webp",
-    "/assets/carnival.webp",
-      "/assets/shubh.webp",
+  "/assets/wardrobe1.webp",
+  "/assets/wardrobe2.webp",
+  "/assets/wardrobe3.webp",
+ 
 ];
 
 const getMaxActive = (isDesktop) =>
@@ -119,7 +117,7 @@ export default function Wardrobe() {
                     <img
                       src={src}
                       alt={`Wardrobe ${index + 1}`}
-                      className="w-full h-full object-contain"
+                      className="w-5/6 h-full object-contain  mx-auto "
                     />
                   </div>
                 );

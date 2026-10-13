@@ -9,6 +9,9 @@ const images = [
   "/assets/couple3.jpg",
   "/assets/couple4.jpg",
   "/assets/couple5.jpg",
+  "/assets/couple6.jpg",
+  "/assets/couple7.jpg",
+  
 ];
 
 const N = images.length;
@@ -32,11 +35,11 @@ export default function PhotoGallery() {
     <section id="photos" className="w-full scroll-mt-6 overflow-x-clip">
       {/* Heading */}
       <div className="flex flex-col justify-center mt-0 lg:mt-20 items-center">
-        <p className="md:text-2xl text-[16px] text-[#B35800] font-cormorant-garamond">
-          Our little album
+        <p className="md:text-2xl text-[16px] text-[#BC610A] font-cormorant-garamond">
+          Our Little Album
         </p>
         <h2
-          className="text-[#B35800] font-cormorant-garamond text-center
+          className="text-[#BC610A] font-cormorant-garamond text-center
             md:text-5xl text-[30px] lg:text-[80px] leading-tight mt-2 font-semibold"
         >
           Photo Gallery
@@ -72,8 +75,14 @@ export default function PhotoGallery() {
                   src={src}
                   alt={`Gallery ${index + 1}`}
                   draggable={false}
-                  className="w-full h-full object-contain rounded-r-2xl rounded-l-sm"
-                  style={{ backfaceVisibility: "hidden" }}
+                  className="w-full h-full rounded-r-2xl rounded-l-sm"
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                    filter: "none",
+                    backfaceVisibility: "hidden",
+                    imageRendering: "auto",
+                  }}
                 />
 
                 {/* Spine shadow */}
@@ -85,14 +94,12 @@ export default function PhotoGallery() {
           {/* Cover hint */}
           {flipped === 0 && (
             <div className="absolute inset-0 z-[100] flex items-center justify-center rounded-2xl bg-black/10 opacity-0 hover:opacity-100 transition-opacity">
-              <span className="bg-white/90 px-5 py-2 rounded-full text-[#B35800] font-cormorant-garamond text-xl">
+              <span className="bg-white/90 px-5 py-2 rounded-full text-[#BC610A] font-cormorant-garamond text-xl">
                 Click to open
               </span>
             </div>
           )}
         </div>
-
-       
       </div>
     </section>
   );

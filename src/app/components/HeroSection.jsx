@@ -38,14 +38,14 @@ export default function HeroSection() {
         {/* ================= WEDDING LOGO ================= */}
         <div className="mt-8 flex flex-col items-center text-center md:mt-10">
           <img
-            src="/assets/wedding-logo.png"
+            src="/assets/logo.png"
             alt="Wedding Logo"
             className="w-[180px] sm:w-[220px] md:w-[280px]"
           />
 
-          <p className="mt-3 text-[15px] tracking-[0.15em] text-[#B35800] sm:text-xs md:mt-5 md:text-2xl font-cormorant-garamond">
+          {/* <p className="mt-3 text-[15px] tracking-[0.15em] text-[#B35800] sm:text-xs md:mt-5 md:text-2xl font-cormorant-garamond">
             #AdityaGotHisPriyanka
-          </p>
+          </p> */}
         </div>
 
         {/* ================= CHOOSE TEXT ================= */}

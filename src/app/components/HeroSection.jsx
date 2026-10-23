@@ -33,14 +33,14 @@ export default function HeroSection() {
     <RoseHeroTemp />
   </div>
       {/* ================= CONTENT ================= */}
-      <div className="relative z-10 flex min-h-screen w-full flex-col items-center px-10 py-10 pb-28 sm:px-8 md:px-12 lg:px-16 mt-10">
+      <div className="relative z-10 flex min-h-screen w-full flex-col items-center px-10 py-10 pb-28 sm:px-8 md:px-12 lg:px-16 mt-6">
 
         {/* ================= GANESH ================= */}
-        <div className="mt-4 flex justify-center md:mt-8">
+        <div className=" flex justify-center md:mt-8">
           <img
             src="/assets/ganes.png"
             alt="Shree Ganesh"
-            className="w-[100px] sm:w-[65px] md:w-[150px]"
+            className="w-[70px] sm:w-[65px] md:w-[150px]"
           />
         </div>
 
@@ -49,7 +49,7 @@ export default function HeroSection() {
           <img
             src="/assets/logo.png"
             alt="Wedding Logo"
-            className="w-[220px] sm:w-[220px] md:w-[280px]"
+            className="w-[240px] sm:w-[220px] md:w-[280px]"
           />
 
           {/* <p className="mt-3 text-[15px] tracking-[0.15em] text-[#B35800] sm:text-xs md:mt-5 md:text-2xl font-cormorant-garamond">

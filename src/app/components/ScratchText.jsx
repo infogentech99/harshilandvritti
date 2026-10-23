@@ -32,12 +32,12 @@ export default function ScratchText({ onReveal }) {
 
       const gradient = ctx.createLinearGradient(0, 0, width, height);
 
-      gradient.addColorStop(0, "#FFF6BF");
-      gradient.addColorStop(0.15, "#FFE36A");
-      gradient.addColorStop(0.35, "#F2C94C");
-      gradient.addColorStop(0.55, "#CFA11A");
-      gradient.addColorStop(0.75, "#A97800");
-      gradient.addColorStop(1, "#FFE36A");
+      gradient.addColorStop(0, "#B35800");
+      gradient.addColorStop(0.15, "#B35800");
+      gradient.addColorStop(0.35, "#B35800");
+      gradient.addColorStop(0.55, "#B35800");
+      gradient.addColorStop(0.75, "#B35800");
+      gradient.addColorStop(1, "#B35800");
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, width, height);

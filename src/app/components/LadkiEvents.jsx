@@ -64,7 +64,7 @@ export default function LadkiEvents() {
           alt="Wedding Logo"
           className="w-[250px] sm:w-[220px] md:w-[280px]"
         />
-        <h2 className="text-[#B35800] font-cormorant-garamond text-[28px] md:text-2xl lg:text-[50px]">
+        <h2 className="text-[#B35800] font-cormorant-garamond text-[28px] md:text-2xl lg:text-[50px] mt-4">
           A Splash of Sunshine (Haldi)
         </h2>
         <p className="text-[#B35800]  font-cormorant-garamond text-[16px] md:text-base">
@@ -83,7 +83,7 @@ export default function LadkiEvents() {
           alt="Wedding Logo"
           className="w-[250px] sm:w-[220px] md:w-[280px]"
         />
-        <h2 className="text-[#B35800] font-cormorant-garamond text-[28px] md:text-2xl lg:text-[50px]">
+        <h2 className="text-[#B35800] font-cormorant-garamond text-[28px] md:text-2xl lg:text-[50px] mt-4">
           A Symphony of Love (Sangeet)
         </h2>
         <p className="text-[#B35800]  font-cormorant-garamond text-[16px] md:text-base">
@@ -95,7 +95,7 @@ export default function LadkiEvents() {
         </p>
       </div>
 
-      <div className="flex items-center w-full mt-6 mb-13 mb-13">
+      <div className="flex items-center w-full md:mt-16 mt-6 mb-13">
         <div className="flex-1">
           <div className="border-t-2 border-[#B35800]" />
           <div className="border-t border-[#B35800] mt-1" />
@@ -119,7 +119,7 @@ export default function LadkiEvents() {
           alt="Wedding Logo"
           className="w-[250px] sm:w-[220px] md:w-[280px]"
         />
-        <h2 className="text-[#B35800] font-cormorant-garamond text-[28px] md:text-2xl lg:text-[50px]">
+        <h2 className="text-[#B35800] font-cormorant-garamond text-[28px] md:text-2xl lg:text-[50px] mt-4">
           Varmala
         </h2>
         <p className="text-[#B35800]  font-cormorant-garamond text-[16px] md:text-base">
@@ -137,7 +137,7 @@ export default function LadkiEvents() {
           alt="Wedding Logo"
           className="w-[250px] sm:w-[220px] md:w-[280px]"
         />
-        <h2 className="text-[#B35800] font-cormorant-garamond text-[28px] md:text-2xl lg:text-[50px]">
+        <h2 className="text-[#B35800] font-cormorant-garamond text-[28px] md:text-2xl lg:text-[50px] mt-4">
           Phere Reception
         </h2>
         <p className="text-[#B35800]  font-cormorant-garamond text-[16px] md:text-base">

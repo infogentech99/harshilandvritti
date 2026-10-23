@@ -12,21 +12,22 @@ export default function LadkeDetails() {
 
   return (
     <div className="mx-auto w-full max-w-4xl text-center md:p-2">
+      
       <p className="text-[17px] md:text-2xl text-[#B35800] font-cormorant-garamond">
-        With the blessings of Smt. Krishna Devi Dhanuka & Mahavir Prasad Dhanuka
-      </p> <br />
-      <p className="text-[17px] md:text-2xl text-[#B35800] font-cormorant-garamond">
-        We cordially invite you to the wedding ceremony of their Grandson
+        We cordially invite you to the wedding ceremony of
       </p>
 
       <div className="mt-8 text-center">
         <h2 className="text-[#B35800] font-pinyon-script text-center mt-14 md:text-4xl text-[38px] lg:text-[60px] leading-tight font-bold">
           Harshil Dhanuka
         </h2>
-
+<p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl text-[16px]">
+          (GrandSon Shri Mahavir Prasad Dhanuka & Smt. Krishna Devi Dhanuka)
+        </p>
         <p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl mt-2 text-[16px]">
           (S/o Shri Suresh Dhanuka & Smt. Dhanuka)
         </p>
+         
 
         <h2 className="text-[#B35800] font-pinyon-script text-center text-[38px] sm:text-7xl lg:text-[60px] leading-tight font-bold">
           <span className="text-[#B35800] font-cormorant-garamond text-center md:text-3xl text-[28px] lg:text-[36px] leading-tight font-medium">
@@ -35,7 +36,9 @@ export default function LadkeDetails() {
           <br />
           Vritti Sanghvi
         </h2>
-
+<p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl text-[16px]">
+          (GrandDaughter Late Ramniklal Maniklal Sanghvi & Smt. Vijaya Ben Sanghvi)
+        </p>
         <p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl mt-2 text-[16px]">
            (D/o Shri Hitesh Sanghvi & Smt. Rashmi Sanghvi)
         </p>

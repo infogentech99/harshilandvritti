@@ -100,7 +100,7 @@ export default function PhotoGallery() {
             </div>
           )}
         </div>
-      </div>
+      </div> 
     </section>
   );
 }

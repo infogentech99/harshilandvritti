@@ -1,12 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import {useEffect, useState } from "react";
 import LadkeDetails from "../components/LadkeDetails";
 import LadkiDetails from "../components/LadkiDetails";
 import RoseHeroTemp from "../components/RoseHeroTemp";
 import BottomNavigation from "../components/BottomNavigation";
 export default function HeroSection() {
-  const [selectedSide, setSelectedSide] = useState(null);
+ const [selectedSide, setSelectedSide] = useState(null);
+  const [showScroll, setShowScroll] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY < 20);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <section id="home" className="relative min-h-screen w-full scroll-mt-0">
@@ -118,8 +133,54 @@ export default function HeroSection() {
         </div>
 
         {/* ================= SELECTED DETAILS ================= */}
-        {selectedSide && (
+        {/* {selectedSide && (
+          <div className="mt-12 w-full max-w-5xl pb-10 md:mt-16"> */}
+
+   {selectedSide && (
           <div className="mt-12 w-full max-w-5xl pb-10 md:mt-16">
+       {/* ================= SCROLL DOWN ================= */}
+<div
+  className={`fixed bottom-20 left-1/2 z-30
+    -translate-x-1/2 flex flex-col items-center
+    transition-all duration-500
+    ${
+      showScroll
+        ? "translate-y-0 opacity-100"
+        : "pointer-events-none translate-y-4 opacity-0"
+    }`}
+>
+  <button
+    type="button"
+    onClick={() => {
+      window.scrollBy({
+        top: window.innerHeight * 0.7,
+        behavior: "smooth",
+      });
+    }}
+    className="flex flex-col items-center gap-2 text-[#B35800]"
+    aria-label="Scroll down to explore"
+  >
+    <span className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#B35800] bg-[#FFF8EB]/80">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="m7 10 5 5 5-5" />
+        <path d="m7 5 5 5 5-5" />
+      </svg>
+    </span>
+
+    <span className="animate-pulse text-[11px] tracking-[2px] font-cormorant-garamond">
+      SCROLL DOWN
+    </span>
+  </button>
+</div>
 
             {selectedSide === "ladke" ? (
               <LadkeDetails />

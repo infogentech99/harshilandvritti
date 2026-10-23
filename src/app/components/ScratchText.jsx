@@ -173,16 +173,15 @@ export default function ScratchText({ onReveal }) {
         ticks: 250,
         origin: { x: 0.5, y: 0.5 },
         colors: [
-          "#FF4D6D",
-          "#FF6B6B",
-          "#FFD93D",
-          "#6BCB77",
-          "#4D96FF",
-          "#845EC2",
-          "#FF9671",
-          "#00C9A7",
-          "#FFFFFF",
-          "#FFD700",
+          "#B35800",
+          "#B35800",
+          "#B35800",
+          "#B35800",
+          "#B35800",
+          "#B35800",
+          "#B35800",
+          "#B35800",
+          "#B35800",
         ],
       });
 
@@ -309,7 +308,8 @@ export default function ScratchText({ onReveal }) {
           textShadow: "0 1px 6px rgba(255,215,0,.35)",
         }}
       >
-        11<sup className="text-[16px]">th </sup>&12<sup className="text-[16px]">th</sup> December
+        11<sup className="text-[16px]">th </sup>&12
+        <sup className="text-[16px]">th</sup> December
       </div>
 
       <canvas

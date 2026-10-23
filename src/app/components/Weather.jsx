@@ -1,18 +1,6 @@
 "use client";
 
-
-const requestNames = [
-  "Late smt Saroj Ben",
-  "Late Shri Nandlal bhai Sanghvi ",
-  "Smt chaya ben", 
-"Shri ramesh bhai sanghvi",
-"Smt Sona Ben", 
-"Shri vijay bhai sanghvi", 
-"Smt Kavita ben", 
-"Shri Yogesh Bhai Sanghvi",
-];
-
-
+const requestNames = ["Late smt Saroj Ben", "Late Shri Nandlal bhai Sanghvi "];
 
 export default function Weather() {
   return (
@@ -20,8 +8,6 @@ export default function Weather() {
       id="weather"
       className="w-full scroll-mt-6 px-0 md:px-10 flex flex-col items-center gap-16"
     >
-      
-
       {/* Special request card */}
       <div
         className="w-full max-w-xl rounded-3xl bg-gradient-to-br from-[#8c1212] to-[#5c0505]
@@ -42,10 +28,30 @@ export default function Weather() {
           ))}
         </div>
 
-      
+        <div className="mx-auto my-3 h-px w-24 bg-[#d4a63c]/50" />
+        <div className="mt-4 space-y-2">
+          <p className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif">
+            Smt chaya ben <br />
+            Shri ramesh bhai sanghvi
+          </p>
+        </div>
 
-        
-       
+        <div className="mx-auto my-3 h-px w-24 bg-[#d4a63c]/50" />
+        <div className="mt-4 space-y-2">
+          <p className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif">
+            Smt Sona Ben <br />
+            Shri vijay bhai sanghvi
+          </p>
+        </div>
+
+        <div className="mx-auto my-3 h-px w-24 bg-[#d4a63c]/50" />
+        <div className="mt-4 space-y-2">
+          <p className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif">
+            Smt Kavita ben
+            <br />
+            Shri Yogesh Bhai Sanghvi
+          </p>
+        </div>
       </div>
     </section>
   );

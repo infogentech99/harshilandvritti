@@ -33,7 +33,7 @@ export default function HeroSection() {
     <RoseHeroTemp />
   </div>
       {/* ================= CONTENT ================= */}
-      <div className="relative z-10 flex min-h-screen w-full flex-col items-center px-10 py-10 pb-28 sm:px-8 md:px-12 lg:px-16 mt-6">
+      <div className="relative z-10 flex min-h-screen w-full flex-col items-center px-10 py-10 pb-28 sm:px-8 md:px-12 lg:px-16 mt-0">
 
         {/* ================= GANESH ================= */}
         <div className=" flex justify-center md:mt-8">

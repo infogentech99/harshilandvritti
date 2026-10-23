@@ -1,9 +1,9 @@
 "use client";
 
 
-const requestNames = ["Late smt Saroj Ben", "Late Shri Nandlal bhai Sanghvi "];
+const requestNames = ["Late Smt Saroj Ben", "Late Shri Nandlal Bhai Sanghvi "];
 
-const regardsNames = ["Sangeeta- Giriraj Ratan ji Bagree,", "Urvashi- Siddharth ji"];
+
 
 export default function LadkiWeather() {
   return (
@@ -36,8 +36,8 @@ export default function LadkiWeather() {
         <div className="mx-auto my-3 h-px w-24 bg-[#d4a63c]/50" />
         <div className="mt-4 space-y-2">
           <p className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif">
-            Smt chaya ben <br />
-            Shri ramesh bhai sanghvi
+            Smt Chaya Ben <br />
+            Shri Ramesh Bhai Sanghvi
           </p>
         </div>
 
@@ -45,14 +45,14 @@ export default function LadkiWeather() {
         <div className="mt-4 space-y-2">
           <p className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif">
             Smt Sona Ben <br />
-            Shri vijay bhai sanghvi
+            Shri Vijay Bhai Sanghvi
           </p>
         </div>
 
         <div className="mx-auto my-3 h-px w-24 bg-[#d4a63c]/50" />
         <div className="mt-4 space-y-2">
           <p className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif">
-            Smt Kavita ben
+            Smt Kavita Ben
             <br />
             Shri Yogesh Bhai Sanghvi
           </p>

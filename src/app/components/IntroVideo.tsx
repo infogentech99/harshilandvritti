@@ -57,7 +57,7 @@ export default function IntroVideo() {
       {/* Envelope */}
       <div className="absolute inset-0 flex items-center justify-center">
         <img
-          src="/assets/envelope-velvet.webp"
+          src="/assets/envelope.webp"
           alt="Envelope"
           className="w-[220px] md:w-[500px] animate-envelope"
         />

@@ -12,13 +12,22 @@ export default function HeroSection() {
     <section id="home" className="relative min-h-screen w-full scroll-mt-0">
 
       {/* ================= BACKGROUND ================= */}
-      <div
+      {/* <div
         className="fixed inset-0 z-0 h-screen w-full bg-[#faf4e8] bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/assets/family-bg5.webp')",
+          backgroundImage: "url('/assets/family-bg.webp')",
           backgroundColor: "#faf4e8",
         }}
-      />
+      /> */}
+      <div
+  className="fixed inset-0 z-0 w-full h-full bg-[#faf4e8] bg-no-repeat"
+  style={{
+    backgroundImage: "url('/assets/family-bg.webp')",
+    backgroundSize: "100% 100%",
+    backgroundPosition: "center",
+    backgroundColor: "#faf4e8",
+  }}
+/>
 
   <div className="pointer-events-none fixed inset-0 z-20 h-screen w-screen">
     <RoseHeroTemp />
@@ -50,7 +59,7 @@ export default function HeroSection() {
 
         {/* ================= CHOOSE TEXT ================= */}
         <div className="mt-14 text-center sm:mt-16 md:mt-20">
-          <p className="text-[18px] text-[#B35800] md:text-xl font-cormorant-garamond">
+          <p className="text-[16px] text-[#B35800] md:text-xl font-cormorant-garamond">
             PLEASE CHOOSE ONE TO CONTINUE
           </p>
         </div>

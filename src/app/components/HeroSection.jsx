@@ -49,7 +49,7 @@ export default function HeroSection() {
           <img
             src="/assets/logo.png"
             alt="Wedding Logo"
-            className="w-[180px] sm:w-[220px] md:w-[280px]"
+            className="w-[220px] sm:w-[220px] md:w-[280px]"
           />
 
           {/* <p className="mt-3 text-[15px] tracking-[0.15em] text-[#B35800] sm:text-xs md:mt-5 md:text-2xl font-cormorant-garamond">

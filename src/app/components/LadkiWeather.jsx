@@ -1,14 +1,15 @@
 "use client";
 
-const days = [
-  { date: "4 Dec", icon: "☀️", high: 31, low: 15, note: "Sunny & pleasant" },
-  { date: "5 Dec", icon: "🌤️", high: 30, low: 14, note: "Clear skies" },
-];
 
 const requestNames = [
-  "Dev dwarkani",
-  "Taruna dwarkani",
-  
+  "Late smt Saroj Ben",
+  "Late Shri Nandlal bhai Sanghvi ",
+  "Smt chaya ben", 
+"Shri ramesh bhai sanghvi",
+"Smt Sona Ben", 
+"Shri vijay bhai sanghvi", 
+"Smt Kavita ben", 
+"Shri Yogesh Bhai Sanghvi",
 ];
 
 const regardsNames = ["Sangeeta- Giriraj Ratan ji Bagree,", "Urvashi- Siddharth ji"];
@@ -34,34 +35,13 @@ export default function LadkiWeather() {
           {requestNames.map((name) => (
             <p
               key={name}
-              className="text-xl md:text-2xl text-[#f6e6dc] font-serif"
+              className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif"
             >
               {name}
             </p>
           ))}
         </div>
 
-        <div className="mx-auto my-6 h-px w-24 bg-[#d4a63c]/50" />
-
-        <p className="text-[11px] tracking-[0.3em] uppercase text-[#d4a63c]">
-          Special Request
-        </p>
-
-        <div className="mt-4 space-y-3">
-          {regardsNames.map((name) => (
-            <p
-              key={name}
-              className="text-xl md:text-2xl text-[#f6e6dc] font-serif"
-            >
-              {name}
-            </p>
-          ))}
-        </div>
-       
-        
-
-
-        
        
         
       </div>

@@ -1,15 +1,15 @@
 "use client";
 
-const days = [
-  { date: "4 Dec", icon: "☀️", high: 31, low: 15, note: "Sunny & pleasant" },
-  { date: "5 Dec", icon: "🌤️", high: 30, low: 14, note: "Clear skies" },
-];
 
 const requestNames = [
-  "Mona - Raj Kumar Tawri",
-  "Rashmi - Shiv Kumar Tawri",
-  "Neha - Rohan",
-  "and Tawri Family",
+  "Late smt Saroj Ben",
+  "Late Shri Nandlal bhai Sanghvi ",
+  "Smt chaya ben", 
+"Shri ramesh bhai sanghvi",
+"Smt Sona Ben", 
+"Shri vijay bhai sanghvi", 
+"Smt Kavita ben", 
+"Shri Yogesh Bhai Sanghvi",
 ];
 
 
@@ -28,14 +28,14 @@ export default function Weather() {
         border border-[#a8641a]/60 px-6 py-10 text-center shadow-[0_20px_50px_rgba(0,0,0,0.25)]"
       >
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#d4a63c]">
-          WELCOME BY
+          Sharing the joy
         </p>
 
         <div className="mt-4 space-y-2">
           {requestNames.map((name) => (
             <p
               key={name}
-              className="text-xl md:text-2xl text-[#f6e6dc] font-serif"
+              className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif"
             >
               {name}
             </p>

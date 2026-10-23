@@ -25,7 +25,7 @@ export default function LadkeDetails() {
         </h2>
 
         <p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl mt-2 text-[16px]">
-          (S/o Shri Suresh Dhanuka & Smt. Jyoti)
+          (S/o Shri Suresh Dhanuka & Smt. Dhanuka)
         </p>
 
         <h2 className="text-[#B35800] font-pinyon-script text-center text-[38px] sm:text-7xl lg:text-[60px] leading-tight font-bold">
@@ -37,7 +37,7 @@ export default function LadkeDetails() {
         </h2>
 
         <p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl mt-2 text-[16px]">
-           (D/o Shri Hitesh Sanghvi & Smt. Reshmi Sanghvi)
+           (D/o Shri Hitesh Sanghvi & Smt. Rashmi Sanghvi)
         </p>
 
         <ScratchText onReveal={() => setRevealed(true)} />

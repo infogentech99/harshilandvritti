@@ -23,7 +23,7 @@ export default function LadkiDetails() {
         </h2>
 
        <p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl text-[16px]">
-          (GrandDaughter Late Ramniklal Maniklal Sanghvi & Smt. Vijaya Ben Sanghvi)
+          (GrandDaughter of Late Ramniklal Maniklal Sanghvi & Smt. Vijaya Ben Sanghvi)
         </p>
         <p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl mt-2 text-[16px]">
            (D/o Shri Hitesh Sanghvi & Smt. Rashmi Sanghvi)
@@ -38,7 +38,7 @@ export default function LadkiDetails() {
         </h2>
 
        <p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl text-[16px]">
-          (GrandSon Shri Mahavir Prasad Dhanuka & Smt. Krishna Devi Dhanuka)
+          (GrandSon of Shri Mahavir Prasad Dhanuka & Smt. Krishna Devi Dhanuka)
         </p>
         <p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl mt-2 text-[16px]">
           (S/o Shri Suresh Dhanuka & Smt. Dhanuka)

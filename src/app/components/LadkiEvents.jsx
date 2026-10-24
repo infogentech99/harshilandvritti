@@ -55,7 +55,7 @@ export default function LadkiEvents() {
         </p>
 
         <p className="text-[#B35800]  font-cormorant-garamond text-sm md:text-base ">
-          Location:- Utsav
+          Location:- Regalia
         </p>
       </div>
 

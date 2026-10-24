@@ -1,6 +1,6 @@
 "use client";
 
-const requestNames = ["Late smt Saroj Ben", "Late Shri Nandlal bhai Sanghvi "];
+const requestNames = ["Late Smt Saroj Ben", "Late Shri Nandlal bhai Sanghvi "];
 
 export default function LadkiWeather() {
   return (

@@ -258,12 +258,12 @@ export default function Wardrobe() {
         event.stopPropagation();
         setSelectedImage(null);
       }}
-      className="fixed right-4 top-4 z-[10000] flex h-12 w-12
-      items-center justify-center rounded-full
-      border border-white/30 bg-black/60 text-white
-      shadow-lg backdrop-blur-sm transition-all duration-200
-      hover:scale-110 hover:bg-[#B35800]
-      active:scale-95 sm:right-6 sm:top-6"
+    className="fixed left-4 top-4 z-[10000] flex h-12 w-12
+  items-center justify-center rounded-full
+  border border-white/30 bg-black/60 text-white
+  shadow-lg backdrop-blur-sm transition-all duration-200
+  hover:scale-110 hover:bg-[#B35800]
+  active:scale-95 sm:left-6 sm:top-6"
     >
       <svg
         viewBox="0 0 24 24"

@@ -1,7 +1,20 @@
 "use client";
 
 
-const requestNames = ["Late Smt Saroj Ben", "Late Shri Nandlal Bhai Sanghvi "];
+const requestNames = ["Sahdev Dhanuka",
+"Anita Arjun Dhanuka",
+"Reena Ramesh Dhanuka",
+"Poonam Mahesh Dhanuka",
+"Veena Hanuman Dhanuka",
+"Rajkumari Bhikham Dhanuka",
+"Priyanka Rajesh Dhanuka",
+"Priyanka Ankur Dhanuka",
+"Kanchan Anuj Dhanuka",
+"Disha Kunal Dhanuka",
+"Shinjini Jivitesh Dhanuka",
+"Harshil, Manish",
+"Jeevanath, Jeevankush",
+"Yug Dhanuka"];
 
 
 
@@ -33,30 +46,7 @@ export default function LadkiWeather() {
           ))}
         </div>
 
-        <div className="mx-auto my-3 h-px w-24 bg-[#d4a63c]/50" />
-        <div className="mt-4 space-y-2">
-          <p className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif">
-            Smt Chaya Ben <br />
-            Shri Ramesh Bhai Sanghvi
-          </p>
-        </div>
-
-        <div className="mx-auto my-3 h-px w-24 bg-[#d4a63c]/50" />
-        <div className="mt-4 space-y-2">
-          <p className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif">
-            Smt Sona Ben <br />
-            Shri Vijay Bhai Sanghvi
-          </p>
-        </div>
-
-        <div className="mx-auto my-3 h-px w-24 bg-[#d4a63c]/50" />
-        <div className="mt-4 space-y-2">
-          <p className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif">
-            Smt Kavita Ben
-            <br />
-            Shri Yogesh Bhai Sanghvi
-          </p>
-        </div>
+ 
       </div>
     </section>
   );

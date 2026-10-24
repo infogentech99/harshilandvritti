@@ -157,10 +157,10 @@ export default function HeroSection() {
         behavior: "smooth",
       });
     }}
-    className="flex flex-col items-center gap-2 text-[#B35800]"
+    className="flex flex-col items-center gap-2 text-[#BE0D1E]"
     aria-label="Scroll down to explore"
   >
-    <span className="flex h-16 w-6 items-center justify-center rounded-full border-2 border-[#B35800] bg-[#FFF8EB]/80">
+    <span className="flex h-16 w-6 items-center justify-center rounded-full border-2 border-[#BE0D1E] bg-[#FFF8EB]/80">
       <svg
         width="24"
         height="24"

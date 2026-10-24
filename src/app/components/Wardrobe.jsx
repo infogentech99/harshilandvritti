@@ -36,13 +36,17 @@ export default function Wardrobe() {
     updateViewport();
     desktopQuery.addEventListener("change", updateViewport);
 
-    return () =>
+    return () => {
       desktopQuery.removeEventListener("change", updateViewport);
+    };
   }, []);
 
-  // Close fullscreen preview with Escape key
+  // Lock background scrolling while fullscreen is open
   useEffect(() => {
     if (!selectedImage) return;
+
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -50,15 +54,15 @@ export default function Wardrobe() {
       }
     };
 
-    window.addEventListener("keydown", handleKeyDown);
-
-    // Prevent background scrolling while preview is open
-    const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = previousOverflow;
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
     };
   }, [selectedImage]);
 
@@ -95,15 +99,15 @@ export default function Wardrobe() {
       className="w-full scroll-mt-6 overflow-x-clip"
     >
       {/* Heading */}
-      <div className="mt-20 lg:mt-40 flex flex-col items-center justify-center">
+      <div className="mt-20 flex flex-col items-center justify-center lg:mt-40">
         <h2
           className="mt-2 text-center font-cormorant-garamond font-semibold
-          leading-tight text-[30px] md:text-5xl lg:text-[80px] text-[#B35800]"
+          leading-tight text-[30px] text-[#B35800] md:text-5xl lg:text-[80px]"
         >
           Wardrobe Guide
         </h2>
 
-        <p className="font-cormorant-garamond text-[16px] md:text-2xl text-[#B35800]">
+        <p className="font-cormorant-garamond text-[16px] text-[#B35800] md:text-2xl">
           Let’s help you pack for the wedding
         </p>
       </div>
@@ -164,7 +168,7 @@ export default function Wardrobe() {
               return (
                 <div
                   key={src}
-                  className={`absolute inset-y-0 left-0 w-full lg:w-1/3 lg:px-2 transition-all duration-700 ease-out ${visibility}`}
+                  className={`absolute inset-y-0 left-0 w-full transition-all duration-700 ease-out lg:w-1/3 lg:px-2 ${visibility}`}
                   style={{
                     transform: `translateX(${offset * 100}%)`,
                     zIndex: images.length - index,
@@ -241,53 +245,53 @@ export default function Wardrobe() {
       </div>
 
       {/* Fullscreen Image Preview */}
-     {selectedImage && (
-  <div
-    className="fixed inset-0 z-[9999] flex items-center
-    justify-center bg-black/95 p-4"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Fullscreen wardrobe image"
-    onClick={() => setSelectedImage(null)}
-  >
-    {/* YAHAN NAYA CLOSE BUTTON LAGAO */}
-    <button
-      type="button"
-      aria-label="Close fullscreen image"
-      onClick={(event) => {
-        event.stopPropagation();
-        setSelectedImage(null);
-      }}
-    className="fixed left-4 top-1 z-[10000] flex h-12 w-12
-  items-center justify-center rounded-full
-  border border-white/30 bg-black/60 text-white
-  shadow-lg backdrop-blur-sm transition-all duration-200
-  hover:scale-110 hover:bg-[#B35800]
-  active:scale-95 sm:left-6 sm:top-6"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        className="h-7 w-7"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        aria-hidden="true"
-      >
-        <path d="M18 6 6 18M6 6l12 12" />
-      </svg>
-    </button>
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[99999] flex items-center
+          justify-center overflow-hidden bg-black/95 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Fullscreen wardrobe image"
+          onClick={() => setSelectedImage(null)}
+        >
+          {/* Image Wrapper */}
+          <div
+            className="relative flex max-h-[92dvh] max-w-[95vw] items-center justify-center"
+            onClick={(event) => event.stopPropagation()}
+          >
+            {/* Close Button - Top Left of Image */}
+            <button
+              type="button"
+              aria-label="Close fullscreen image"
+              onClick={() => setSelectedImage(null)}
+              className="absolute left-2 top-2 z-10 flex h-12 w-12
+              items-center justify-center rounded-full
+              border border-white/30 bg-black/70 text-white
+              shadow-lg backdrop-blur-sm transition-all duration-200
+              hover:scale-110 hover:bg-[#B35800] active:scale-95"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-7 w-7"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                aria-hidden="true"
+              >
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            </button>
 
-    {/* Enlarged Image */}
-    <img
-      src={selectedImage}
-      alt="Fullscreen wardrobe guide"
-      onClick={(event) => event.stopPropagation()}
-      className="max-h-[92vh] max-w-[95vw] cursor-zoom-out
-      object-contain"
-    />
-  </div>
-)}
+            {/* Enlarged Image */}
+            <img
+              src={selectedImage}
+              alt="Fullscreen wardrobe guide"
+              className="max-h-[92dvh] max-w-[95vw] object-contain"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

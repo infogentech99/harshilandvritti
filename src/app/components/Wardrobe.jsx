@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 const cover = "/assets/door.png";
 
@@ -19,15 +20,22 @@ export default function Wardrobe() {
   const [active, setActive] = useState(0);
   const [isDesktop, setIsDesktop] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [mounted, setMounted] = useState(false);
 
   const touchStartX = useRef(null);
 
-  // Responsive viewport
+  // Ensure document.body is available before using a portal
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Responsive slider
   useEffect(() => {
     const desktopQuery = window.matchMedia("(min-width: 1024px)");
 
     const updateViewport = () => {
       setIsDesktop(desktopQuery.matches);
+
       setActive((current) =>
         Math.min(current, getMaxActive(desktopQuery.matches))
       );
@@ -41,12 +49,17 @@ export default function Wardrobe() {
     };
   }, []);
 
-  // Lock background scrolling while fullscreen is open
+  // Lock background scroll while fullscreen is open
   useEffect(() => {
     if (!selectedImage) return;
 
+    const scrollY = window.scrollY;
+
     const previousBodyOverflow = document.body.style.overflow;
     const previousHtmlOverflow = document.documentElement.style.overflow;
+    const previousBodyPosition = document.body.style.position;
+    const previousBodyWidth = document.body.style.width;
+    const previousBodyTop = document.body.style.top;
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -54,23 +67,38 @@ export default function Wardrobe() {
       }
     };
 
-    document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
+    document.body.style.top = `-${scrollY}px`;
 
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = previousBodyOverflow;
+
       document.documentElement.style.overflow = previousHtmlOverflow;
+      document.body.style.overflow = previousBodyOverflow;
+      document.body.style.position = previousBodyPosition;
+      document.body.style.width = previousBodyWidth;
+      document.body.style.top = previousBodyTop;
+
+      window.scrollTo(0, scrollY);
     };
   }, [selectedImage]);
 
+  // Swipe slider
   const handlePointerDown = (event) => {
     if (event.pointerType === "mouse" && event.button !== 0) return;
 
     touchStartX.current = event.clientX;
-    event.currentTarget.setPointerCapture(event.pointerId);
+
+    try {
+      event.currentTarget.setPointerCapture(event.pointerId);
+    } catch {
+      // Pointer capture may not be available in every environment
+    }
   };
 
   const handlePointerUp = (event) => {
@@ -93,6 +121,8 @@ export default function Wardrobe() {
     touchStartX.current = null;
   };
 
+  const closeFullscreen = () => setSelectedImage(null);
+
   return (
     <section
       id="wardrobe"
@@ -100,10 +130,7 @@ export default function Wardrobe() {
     >
       {/* Heading */}
       <div className="mt-20 flex flex-col items-center justify-center lg:mt-40">
-        <h2
-          className="mt-2 text-center font-cormorant-garamond font-semibold
-          leading-tight text-[30px] text-[#B35800] md:text-5xl lg:text-[80px]"
-        >
+        <h2 className="mt-2 text-center font-cormorant-garamond font-semibold leading-tight text-[30px] text-[#B35800] md:text-5xl lg:text-[80px]">
           Wardrobe Guide
         </h2>
 
@@ -112,13 +139,13 @@ export default function Wardrobe() {
         </p>
       </div>
 
-      {/* Wardrobe Content */}
+      {/* Cover and slider */}
       <div className="mt-16 flex justify-center pb-32">
         {!isOpen ? (
           <button
             type="button"
             onClick={() => setIsOpen(true)}
-            aria-label="Click to open Wardrobe Guide"
+            aria-label="Open Wardrobe Guide"
             className="group relative h-[420px] w-[300px] cursor-pointer md:h-[520px] md:w-[380px]"
           >
             <img
@@ -127,17 +154,8 @@ export default function Wardrobe() {
               className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
             />
 
-            {/* Click to Open Overlay */}
-            <div
-              className="absolute inset-0 z-10 flex items-center justify-center
-              rounded-2xl bg-black/10 opacity-100 transition-opacity duration-300
-              lg:opacity-0 lg:group-hover:opacity-100"
-            >
-              <span
-                className="rounded-full bg-white/90 px-5 py-2
-                font-cormorant-garamond text-xl text-[#BC610A] shadow-md
-                transition-transform duration-300 group-hover:scale-105"
-              >
+            <div className="absolute inset-0 z-10 flex items-center justify-center rounded-2xl bg-black/10 transition-opacity duration-300 lg:opacity-0 lg:group-hover:opacity-100">
+              <span className="rounded-full bg-white/90 px-5 py-2 font-cormorant-garamond text-xl text-[#BC610A] shadow-md transition-transform duration-300 group-hover:scale-105">
                 Click to open
               </span>
             </div>
@@ -146,9 +164,7 @@ export default function Wardrobe() {
           <div
             role="region"
             aria-label="Wardrobe image slider"
-            className="relative h-[550px] w-[calc(100vw-2rem)] cursor-grab
-            touch-pan-y overflow-hidden rounded-2xl active:cursor-grabbing
-            md:h-[520px] md:w-[380px] lg:w-[900px]"
+            className="relative h-[550px] w-[calc(100vw-2rem)] cursor-grab touch-pan-y overflow-hidden rounded-2xl active:cursor-grabbing md:h-[520px] md:w-[380px] lg:w-[900px]"
             onPointerDown={handlePointerDown}
             onPointerUp={handlePointerUp}
             onPointerCancel={() => {
@@ -177,6 +193,7 @@ export default function Wardrobe() {
                   <img
                     src={src}
                     alt={`Wardrobe ${index + 1}`}
+                    draggable={false}
                     onClick={(event) => {
                       event.stopPropagation();
                       setSelectedImage(src);
@@ -187,19 +204,16 @@ export default function Wardrobe() {
               );
             })}
 
-            {/* Previous Button */}
+            {/* Previous */}
             <button
               type="button"
-              aria-label="Previous wardrobe images"
+              aria-label="Previous wardrobe image"
               onPointerDown={(event) => event.stopPropagation()}
               onClick={() =>
                 setActive((current) => Math.max(0, current - 1))
               }
               disabled={active === 0}
-              className="absolute left-2 top-1/2 z-50 flex h-10 w-10
-              -translate-y-1/2 items-center justify-center rounded-full
-              bg-white/90 text-[#B35800] shadow-md transition-opacity
-              disabled:opacity-40"
+              className="absolute left-2 top-1/2 z-50 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#B35800] shadow-md disabled:opacity-40"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -213,10 +227,10 @@ export default function Wardrobe() {
               </svg>
             </button>
 
-            {/* Next Button */}
+            {/* Next */}
             <button
               type="button"
-              aria-label="Next wardrobe images"
+              aria-label="Next wardrobe image"
               onPointerDown={(event) => event.stopPropagation()}
               onClick={() =>
                 setActive((current) =>
@@ -224,10 +238,7 @@ export default function Wardrobe() {
                 )
               }
               disabled={active >= getMaxActive(isDesktop)}
-              className="absolute right-2 top-1/2 z-50 flex h-10 w-10
-              -translate-y-1/2 items-center justify-center rounded-full
-              bg-white/90 text-[#B35800] shadow-md transition-opacity
-              disabled:opacity-40"
+              className="absolute right-2 top-1/2 z-50 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#B35800] shadow-md disabled:opacity-40"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -244,31 +255,31 @@ export default function Wardrobe() {
         )}
       </div>
 
-      {/* Fullscreen Image Preview */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-[99999] flex items-center
-          justify-center overflow-hidden bg-black/95 p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Fullscreen wardrobe image"
-          onClick={() => setSelectedImage(null)}
-        >
-          {/* Image Wrapper */}
+      {/* Fullscreen portal: renders directly inside document.body */}
+      {mounted &&
+        selectedImage &&
+        createPortal(
           <div
-            className="relative flex max-h-[92dvh] max-w-[95vw] items-center justify-center"
-            onClick={(event) => event.stopPropagation()}
+            className="fixed inset-0 z-[2147483647] h-[100dvh] w-screen overflow-x-hidden overflow-y-auto overscroll-contain bg-black"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Fullscreen wardrobe image"
+            onClick={closeFullscreen}
+            style={{
+              WebkitOverflowScrolling: "touch",
+              paddingTop: "env(safe-area-inset-top)",
+              paddingBottom: "env(safe-area-inset-bottom)",
+            }}
           >
-            {/* Close Button - Top Left of Image */}
+            {/* Close button */}
             <button
               type="button"
               aria-label="Close fullscreen image"
-              onClick={() => setSelectedImage(null)}
-              className="absolute left-2 top-2 z-10 flex h-12 w-12
-              items-center justify-center rounded-full
-              border border-white/30 bg-black/70 text-white
-              shadow-lg backdrop-blur-sm transition-all duration-200
-              hover:scale-110 hover:bg-[#B35800] active:scale-95"
+              onClick={closeFullscreen}
+              className="fixed right-4 top-4 z-[2147483647] flex h-12 w-12 items-center justify-center rounded-full border border-white/40 bg-black/75 text-white shadow-lg backdrop-blur-md transition hover:bg-[#B35800] active:scale-95"
+              style={{
+                top: "max(16px, env(safe-area-inset-top))",
+              }}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -283,15 +294,25 @@ export default function Wardrobe() {
               </svg>
             </button>
 
-            {/* Enlarged Image */}
-            <img
-              src={selectedImage}
-              alt="Fullscreen wardrobe guide"
-              className="max-h-[92dvh] max-w-[95vw] object-contain"
-            />
-          </div>
-        </div>
-      )}
+            {/* Image can be scrolled vertically if taller than viewport */}
+            <div
+              className="flex min-h-[100dvh] w-full items-center justify-center p-2 pt-16"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <img
+                src={selectedImage}
+                alt="Fullscreen wardrobe guide"
+                draggable={false}
+                className="block h-auto w-auto max-w-full object-contain"
+                style={{
+                  maxHeight: "none",
+                  margin: "auto",
+                }}
+              />
+            </div>
+          </div>,
+          document.body
+        )}
     </section>
   );
 }

@@ -276,7 +276,7 @@ export default function Wardrobe() {
               type="button"
               aria-label="Close fullscreen image"
               onClick={closeFullscreen}
-              className="fixed right-4 top-1 z-[2147483647] flex h-12 w-12 items-center justify-center rounded-full border border-white/40 bg-black/75 text-white shadow-lg backdrop-blur-md transition hover:bg-[#B35800] active:scale-95"
+              className="fixed right-4 top-0 z-[2147483647] flex h-12 w-12 items-center justify-center rounded-full border border-white/40 bg-black/75 text-white shadow-lg backdrop-blur-md transition hover:bg-[#B35800] active:scale-95"
               style={{
                 top: "max(16px, env(safe-area-inset-top))",
               }}
@@ -296,7 +296,7 @@ export default function Wardrobe() {
 
             {/* Image can be scrolled vertically if taller than viewport */}
             <div
-              className="flex min-h-[100dvh] w-full items-center justify-center p-2 pt-16"
+              className="flex min-h-[100dvh] w-full items-center justify-center p-2 md:pt-16"
               onClick={(event) => event.stopPropagation()}
             >
               <img

@@ -140,14 +140,14 @@ export default function HeroSection() {
           <div className="mt-12 w-full max-w-5xl pb-10 md:mt-16">
        {/* ================= SCROLL DOWN ================= */}
 <div
-  className={`fixed bottom-20 left-1/2 z-30
-    -translate-x-1/2 flex flex-col items-center
-    transition-all duration-500
-    ${
-      showScroll
-        ? "translate-y-0 opacity-100"
-        : "pointer-events-none translate-y-4 opacity-0"
-    }`}
+ className={`fixed bottom-20 right-2 z-30
+  flex flex-col items-center
+  transition-all duration-500
+  ${
+    showScroll
+      ? "translate-y-0 opacity-100"
+      : "pointer-events-none translate-y-4 opacity-0"
+  }`}
 >
   <button
     type="button"
@@ -160,7 +160,7 @@ export default function HeroSection() {
     className="flex flex-col items-center gap-2 text-[#B35800]"
     aria-label="Scroll down to explore"
   >
-    <span className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#B35800] bg-[#FFF8EB]/80">
+    <span className="flex h-16 w-6 items-center justify-center rounded-full border-2 border-[#B35800] bg-[#FFF8EB]/80">
       <svg
         width="24"
         height="24"
@@ -176,8 +176,8 @@ export default function HeroSection() {
       </svg>
     </span>
 
-    <span className="animate-pulse text-[11px] tracking-[2px] font-cormorant-garamond">
-      SCROLL DOWN
+    <span className="animate-pulse text-[11px] tracking-[2px] font-cormorant-garamond font-bold">
+      SCROLL <br/> DOWN
     </span>
   </button>
 </div>

@@ -25,7 +25,7 @@ export default function LadkeDetails() {
           (GrandSon of Shri Mahavir Prasad Dhanuka & Smt. Krishna Devi Dhanuka)
         </p>
         <p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl mt-2 text-[16px]">
-          (S/o Shri Suresh Dhanuka & Smt. Dhanuka)
+          (S/o Shri Suresh Dhanuka & Smt. Jyoti Dhanuka)
         </p>
          
 

@@ -241,50 +241,53 @@ export default function Wardrobe() {
       </div>
 
       {/* Fullscreen Image Preview */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-[9999] flex items-center
-          justify-center bg-black/95 p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Fullscreen wardrobe image"
-          onClick={() => setSelectedImage(null)}
-        >
-          {/* Close Button */}
-          <button
-            type="button"
-            aria-label="Close fullscreen image"
-            onClick={(event) => {
-              event.stopPropagation();
-              setSelectedImage(null);
-            }}
-            className="absolute right-5 top-5 z-[10000] flex h-11 w-11
-            items-center justify-center rounded-full bg-white/15
-            text-white transition hover:bg-white/30"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="h-7 w-7"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              aria-hidden="true"
-            >
-              <path d="M18 6 6 18M6 6l12 12" />
-            </svg>
-          </button>
+     {selectedImage && (
+  <div
+    className="fixed inset-0 z-[9999] flex items-center
+    justify-center bg-black/95 p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Fullscreen wardrobe image"
+    onClick={() => setSelectedImage(null)}
+  >
+    {/* YAHAN NAYA CLOSE BUTTON LAGAO */}
+    <button
+      type="button"
+      aria-label="Close fullscreen image"
+      onClick={(event) => {
+        event.stopPropagation();
+        setSelectedImage(null);
+      }}
+      className="fixed right-4 top-4 z-[10000] flex h-12 w-12
+      items-center justify-center rounded-full
+      border border-white/30 bg-black/60 text-white
+      shadow-lg backdrop-blur-sm transition-all duration-200
+      hover:scale-110 hover:bg-[#B35800]
+      active:scale-95 sm:right-6 sm:top-6"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        className="h-7 w-7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        aria-hidden="true"
+      >
+        <path d="M18 6 6 18M6 6l12 12" />
+      </svg>
+    </button>
 
-          {/* Enlarged Image */}
-          <img
-            src={selectedImage}
-            alt="Fullscreen wardrobe guide"
-            onClick={(event) => event.stopPropagation()}
-            className="max-h-[92vh] max-w-[95vw] cursor-zoom-out
-            object-contain"
-          />
-        </div>
-      )}
+    {/* Enlarged Image */}
+    <img
+      src={selectedImage}
+      alt="Fullscreen wardrobe guide"
+      onClick={(event) => event.stopPropagation()}
+      className="max-h-[92vh] max-w-[95vw] cursor-zoom-out
+      object-contain"
+    />
+  </div>
+)}
     </section>
   );
 }

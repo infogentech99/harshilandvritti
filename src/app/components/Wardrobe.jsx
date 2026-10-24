@@ -258,7 +258,7 @@ export default function Wardrobe() {
         event.stopPropagation();
         setSelectedImage(null);
       }}
-    className="fixed left-4 top-4 z-[10000] flex h-12 w-12
+    className="fixed left-4 top-1 z-[10000] flex h-12 w-12
   items-center justify-center rounded-full
   border border-white/30 bg-black/60 text-white
   shadow-lg backdrop-blur-sm transition-all duration-200

@@ -1,26 +1,10 @@
 "use client";
 
-
-const requestNames = ["Sahdev Dhanuka",
-"Anita Arjun Dhanuka",
-"Reena Ramesh Dhanuka",
-"Poonam Mahesh Dhanuka",
-"Veena Hanuman Dhanuka",
-"Rajkumari Bhikham Dhanuka",
-"Priyanka Rajesh Dhanuka",
-"Priyanka Ankur Dhanuka",
-"Kanchan Anuj Dhanuka",
-"Disha Kunal Dhanuka",
-"Shinjini Jivitesh Dhanuka",
-"Harshil, Manish",
-"Jeevanath, Jeevankush",
-"Yug Dhanuka"];
-
-
+const requestNames = ["Late smt Saroj Ben", "Late Shri Nandlal bhai Sanghvi "];
 
 export default function LadkiWeather() {
   return (
-    <section
+  <section
       id="weather"
       className="w-full scroll-mt-6 px-0 md:px-10 flex flex-col items-center gap-16"
     >
@@ -46,8 +30,33 @@ export default function LadkiWeather() {
           ))}
         </div>
 
- 
+        <div className="mx-auto my-3 h-px w-24 bg-[#d4a63c]/50" />
+        <div className="mt-4 space-y-2">
+          <p className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif">
+            Smt Chaya Ben <br />
+            Shri Ramesh Bhai Sanghvi
+          </p>
+        </div>
+
+        <div className="mx-auto my-3 h-px w-24 bg-[#d4a63c]/50" />
+        <div className="mt-4 space-y-2">
+          <p className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif">
+            Smt Sona Ben <br />
+            Shri Vijay Bhai Sanghvi
+          </p>
+        </div>
+
+        <div className="mx-auto my-3 h-px w-24 bg-[#d4a63c]/50" />
+        <div className="mt-4 space-y-2">
+          <p className="text-[15px] md:text-2xl text-[#f6e6dc] font-serif">
+            Smt Kavita Ben
+            <br />
+            Shri Yogesh Bhai Sanghvi
+          </p>
+        </div>
       </div>
     </section>
   );
 }
+
+

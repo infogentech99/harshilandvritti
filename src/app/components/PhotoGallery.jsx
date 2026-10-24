@@ -93,12 +93,12 @@ export default function PhotoGallery() {
 
           {/* Cover hint */}
           {flipped === 0 && (
-            <div className="absolute inset-0 z-[100] flex items-center justify-center rounded-2xl bg-black/10 opacity-0 hover:opacity-100 transition-opacity">
-              <span className="bg-white/90 px-5 py-2 rounded-full text-[#BC610A] font-cormorant-garamond text-xl">
-                Click to open
-              </span>
-            </div>
-          )}
+  <div className="absolute inset-0 z-[100] flex items-center justify-center rounded-2xl bg-black/10 opacity-100">
+    <span className="bg-white/90 px-5 py-2 rounded-full text-[#BC610A] font-cormorant-garamond text-xl">
+      Click to open
+    </span>
+  </div>
+)}
         </div>
       </div> 
     </section>

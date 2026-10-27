@@ -91,7 +91,7 @@ export default function LadkiEvents() {
           Varmala
         </h2>
         <p className="text-[#B35800]  font-cormorant-garamond text-[16px] md:text-base">
-          6:30 pm onwards
+          4:30 pm onwards
         </p>
 
         <p className="text-[#B35800]  font-cormorant-garamond text-sm md:text-base ">
@@ -109,7 +109,7 @@ export default function LadkiEvents() {
           Phere Reception
         </h2>
         <p className="text-[#B35800]  font-cormorant-garamond text-[16px] md:text-base">
-          7:30 pm onwards
+          6:01 pm onwards
         </p>
 
         <p className="text-[#B35800]  font-cormorant-garamond text-sm md:text-base ">

@@ -4,13 +4,7 @@ import { useState } from "react";
 
 const images = [
   "/assets/book_image.webp",
-  "/assets/couple1.jpg",
-  "/assets/couple2.jpg",
-  "/assets/couple3.jpg",
-  "/assets/couple4.jpg",
-  "/assets/couple5.jpg",
-  "/assets/couple6.jpg",
-  "/assets/couple7.jpg",
+ 
   "/assets/couple8.jpg",
   "/assets/couple9.jpg",
   "/assets/couple10.jpg",
@@ -20,7 +14,7 @@ const images = [
   "/assets/couple14.jpg",
   "/assets/couple15.jpg",
   "/assets/couple16.jpg",
-  "/assets/couple17.jpg",
+  // "/assets/couple17.jpg",
   "/assets/couple18.jpg",
   "/assets/couple19.jpg",
    "/assets/couple20.jpg",

@@ -11,7 +11,21 @@ const images = [
   "/assets/couple5.jpg",
   "/assets/couple6.jpg",
   "/assets/couple7.jpg",
-  
+  "/assets/couple8.jpg",
+  "/assets/couple9.jpg",
+  "/assets/couple10.jpg",
+  "/assets/couple11.jpg",
+  "/assets/couple12.jpg",
+  "/assets/couple13.jpg",
+  "/assets/couple14.jpg",
+  "/assets/couple15.jpg",
+  "/assets/couple16.jpg",
+  "/assets/couple17.jpg",
+  "/assets/couple18.jpg",
+  "/assets/couple19.jpg",
+   "/assets/couple20.jpg",
+    "/assets/couple21.jpg",
+     "/assets/couple22.jpg",
 ];
 
 const N = images.length;
@@ -93,14 +107,14 @@ export default function PhotoGallery() {
 
           {/* Cover hint */}
           {flipped === 0 && (
-  <div className="absolute inset-0 z-[100] flex items-center justify-center rounded-2xl bg-black/10 opacity-100">
-    <span className="bg-white/90 px-5 py-2 rounded-full text-[#BC610A] font-cormorant-garamond text-xl">
-      Click to open
-    </span>
-  </div>
-)}
+            <div className="absolute inset-0 z-[100] flex items-center justify-center rounded-2xl bg-black/10 opacity-100">
+              <span className="bg-white/90 px-5 py-2 rounded-full text-[#BC610A] font-cormorant-garamond text-xl">
+                Click to open
+              </span>
+            </div>
+          )}
         </div>
-      </div> 
+      </div>
     </section>
   );
 }

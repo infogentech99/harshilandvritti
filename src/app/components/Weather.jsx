@@ -12,8 +12,8 @@ const requestNames = ["Sahdev Dhanuka",
 "Kanchan Anuj Dhanuka",
 "Disha Kunal Dhanuka",
 "Shinjini Jivitesh Dhanuka",
-"Harshil, Manish",
-"Jeevanath, Jeevankush",
+"Manish",
+"Jeevansh, Jeevankush",
 "Yug Dhanuka"];
 
 

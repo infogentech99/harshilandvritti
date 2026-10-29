@@ -38,7 +38,7 @@ export default function LadkiDetails() {
         </h2>
 
        <p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl text-[16px]">
-          (GrandSon of Shri Mahavir Prasad Dhanuka & Smt. Krishna Devi Dhanuka)
+          (GrandSon of Late Mahavir Prasad Dhanuka & Late Krishna Devi Dhanuka)
         </p>
         <p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl mt-2 text-[16px]">
           (S/o Shri Suresh Dhanuka & Smt. Jyoti Dhanuka)
